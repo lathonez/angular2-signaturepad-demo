@@ -58,6 +58,10 @@ export class SignatureFieldComponent implements ControlValueAccessor {
     this.signaturePad.clear();
   }
 
+  public drawBegin(): void {
+    console.log('Begin Drawing');
+  }
+
   public drawComplete(): void {
     this.signature = this.signaturePad.toDataURL();
   }
