@@ -1,0 +1,15 @@
+.sig-container {
+  border-style: dashed;
+  border-width: 1px;
+}
+
+.sig-container canvas {
+  border-style: solid;
+  border-width: 1px;
+}
+
+.sig-container canvas {
+  background-image: url('../assets/sign-here.png');
+  background-repeat: no-repeat;
+  background-position-y: 95%;
+}

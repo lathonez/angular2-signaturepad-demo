@@ -1,5 +1,6 @@
-import { Component }              from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { Component, ViewChildren, QueryList, ElementRef } from '@angular/core';
+import { FormBuilder, FormGroup, Validators }  from '@angular/forms';
+import { SignatureFieldComponent } from "./signature-field/signature-field.component";
 
 @Component({
   selector: 'app-root',
@@ -9,14 +10,47 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 
 export class AppComponent {
 
-  public title = 'app works!';
+  public title = 'angular2-signaturepad-demo';
   private form: FormGroup;
+
+  @ViewChildren(SignatureFieldComponent) public sigs: QueryList<SignatureFieldComponent>;
+  @ViewChildren('sigContainer1') public sigContainer1: QueryList<ElementRef>;
+  @ViewChildren('sigContainer2') public sigContainer2: QueryList<ElementRef>;
 
   constructor(fb: FormBuilder) {
 
     this.form = fb.group({
-      signatureField: '',
+      signatureField1: ['', Validators.required],
+      signatureField2: ['', Validators.required]
     });
+
+    console.log(this);
   }
 
+  public ngAfterViewInit() {
+    this.beResponsive();
+  }
+
+  // set the dimensions of the signature pad canvas
+  public beResponsive() {
+    console.log('Resizing signature pad canvas to suit container size')
+    this.size(this.sigContainer1.first, this.sigs.first);
+    this.size(this.sigContainer2.first, this.sigs.last);
+  }
+
+  public size(container: ElementRef, sig: SignatureFieldComponent){
+    sig.signaturePad.set('canvasWidth', container.nativeElement.clientWidth);
+    sig.signaturePad.set('canvasHeight', container.nativeElement.clientHeight);
+  }
+
+  public submit() {
+    console.log('CAPTURED SIGS:');
+    console.log(this.sigs.first.signature);
+    console.log(this.sigs.last.signature);
+  }
+
+  public clear() {
+    this.sigs.first.clear();
+    this.sigs.last.clear();
+  }
 }
