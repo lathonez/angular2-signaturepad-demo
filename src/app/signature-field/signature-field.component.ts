@@ -1,4 +1,4 @@
-import { Component, ViewChild, forwardRef }        from '@angular/core';
+import { Component, ViewChild, forwardRef, Input } from '@angular/core';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 import { SignaturePad }                            from 'angular2-signaturepad/signature-pad';
 
