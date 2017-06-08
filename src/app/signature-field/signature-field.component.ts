@@ -35,6 +35,8 @@ export class SignatureFieldComponent implements ControlValueAccessor {
   set signature(value: any) {
     this._signature = value;
     console.log('set signature to ' + this._signature);
+    console.log('signature data :');
+    console.log(this.signaturePad.toData());
     this.propagateChange(this.signature);
   }
 
