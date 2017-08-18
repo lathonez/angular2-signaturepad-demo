@@ -11,7 +11,7 @@ import { SignatureFieldComponent } from "./signature-field/signature-field.compo
 export class AppComponent {
 
   public title = 'angular2-signaturepad-demo';
-  private form: FormGroup;
+  public form: FormGroup;
 
   @ViewChildren(SignatureFieldComponent) public sigs: QueryList<SignatureFieldComponent>;
   @ViewChildren('sigContainer1') public sigContainer1: QueryList<ElementRef>;
