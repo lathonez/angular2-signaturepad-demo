@@ -8,7 +8,8 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "gh-pages": "ng build --prod --base-href \"http://lathonez.com/angular2-signaturepad-demo/\" && angular-cli-ghpages"
   },
   "private": true,
   "dependencies": {
