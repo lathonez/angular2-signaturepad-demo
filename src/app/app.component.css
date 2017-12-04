@@ -9,7 +9,7 @@
 }
 
 .sig-container canvas {
-  background-image: url('../assets/sign-here.png');
+  background-image: url(/assets/sign-here.png);
   background-repeat: no-repeat;
   background-position-y: 95%;
 }
@@ -20,5 +20,5 @@
 }
 
 .sig-container-image canvas {
-  background-image: url('../assets/cat-sig.png');
+  background-image: url(/assets/cat-sig.png);
 }
