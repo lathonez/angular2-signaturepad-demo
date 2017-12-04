@@ -1,6 +1,6 @@
 import { Component, ViewChildren, QueryList, ElementRef } from '@angular/core';
-import { FormBuilder, FormGroup, Validators }  from '@angular/forms';
-import { SignatureFieldComponent } from "./signature-field/signature-field.component";
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { SignatureFieldComponent } from './signature-field/signature-field.component';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +9,7 @@ import { SignatureFieldComponent } from "./signature-field/signature-field.compo
 })
 export class AppComponent {
 
-  public title = 'angular2-signaturepad-demo';
+  public title = 'angular2-signaturepad-demo @ng 5.0.5';
   public form: FormGroup;
 
   // for convenience as we don't have a QueryList.index
@@ -43,7 +43,7 @@ export class AppComponent {
     this.size(this.sigContainer3.first, this.sigs.last);
   }
 
-  public size(container: ElementRef, sig: SignatureFieldComponent){
+  public size(container: ElementRef, sig: SignatureFieldComponent) {
     sig.signaturePad.set('canvasWidth', container.nativeElement.clientWidth);
     sig.signaturePad.set('canvasHeight', container.nativeElement.clientHeight);
   }
