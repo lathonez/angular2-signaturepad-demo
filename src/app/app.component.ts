@@ -7,7 +7,6 @@ import { SignatureFieldComponent } from "./signature-field/signature-field.compo
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-
 export class AppComponent {
 
   public title = 'angular2-signaturepad-demo';
@@ -28,8 +27,6 @@ export class AppComponent {
       signatureField2: ['', Validators.required],
       signatureField3: ['', Validators.required]
     });
-
-    window['app'] = this;
   }
 
   public ngAfterViewInit() {
