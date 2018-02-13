@@ -9,7 +9,7 @@ import { SignatureFieldComponent } from './signature-field/signature-field.compo
 })
 export class AppComponent {
 
-  public title = 'angular2-signaturepad-demo @ng 5.0.5';
+  public title = 'angular2-signaturepad-demo : angular2-signaturepad@2.7.0 angular@5.1.0';
   public form: FormGroup;
 
   // for convenience as we don't have a QueryList.index
