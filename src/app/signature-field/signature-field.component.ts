@@ -1,6 +1,6 @@
-import { Component, ViewChild, forwardRef } from '@angular/core';
+import { Component, ViewChild, forwardRef, AfterViewInit } from '@angular/core';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
-import { SignaturePad }                            from 'angular2-signaturepad/signature-pad';
+import { SignaturePad } from 'angular2-signaturepad/signature-pad';
 
 /*
   Generated class for the SignatureField component.
@@ -19,8 +19,8 @@ import { SignaturePad }                            from 'angular2-signaturepad/s
     },
   ],
 })
-export class SignatureFieldComponent implements ControlValueAccessor {
-  @ViewChild(SignaturePad) public signaturePad: SignaturePad;
+export class SignatureFieldComponent implements ControlValueAccessor, AfterViewInit {
+  @ViewChild('signaturePad', { static: true }) public signaturePad: SignaturePad;
 
   public options: Object = {};
 
